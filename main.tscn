@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bclveruh26put"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.0295, 16.589)
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 253.342
+offset_top = 131.604
+offset_right = 753.342
+offset_bottom = 614.604
+scale = Vector2(1.3297, 0.96)
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/normal_font_size = 50
+text = "this is the empty and void but very complex main scheme which will become the begenning scene one day"
+fit_content = true
