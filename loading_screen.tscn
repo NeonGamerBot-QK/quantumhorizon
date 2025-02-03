@@ -27,7 +27,7 @@ texture = ExtResource("2_dqbcs")
 script = ExtResource("3_36i4m")
 
 [node name="Leave" type="Sprite2D" parent="."]
-position = Vector2(733.246, 427.189)
+position = Vector2(733.246, 441.144)
 scale = Vector2(6.93421, 6.11578)
 texture = ExtResource("4_ydtp6")
 offset = Vector2(10, 1)
