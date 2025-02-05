@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bclveruh26put"]
+[gd_scene load_steps=7 format=3 uid="uid://bclveruh26put"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_1bo2a"]
 [ext_resource type="Texture2D" uid="uid://n6c1vn50obfo" path="res://images/starry_background.png" id="1_2mfvg"]
 [ext_resource type="Script" path="res://background.gd" id="2_vmb0k"]
 [ext_resource type="Script" path="res://ship.gd" id="3_l4gew"]
@@ -21,7 +22,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Node2D"]
+[node name="Main -- ship go accross screen" type="Node2D"]
+script = ExtResource("1_1bo2a")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(572, 319)
@@ -30,6 +32,9 @@ texture = ExtResource("1_2mfvg")
 script = ExtResource("2_vmb0k")
 
 [node name="Ship" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 372)
+rotation = 1.5708
+scale = Vector2(0.387234, 0.387302)
 sprite_frames = SubResource("SpriteFrames_1q8ia")
 animation = &"fly"
 script = ExtResource("3_l4gew")
