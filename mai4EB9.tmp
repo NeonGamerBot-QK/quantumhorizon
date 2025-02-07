@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://0lya8cafamfu"]
+[gd_scene load_steps=7 format=3 uid="uid://0lya8cafamfu"]
 
 [ext_resource type="Texture2D" uid="uid://d1tuvd7vlqqst" path="res://images/spacebridge big_0.png" id="1_yv1c0"]
 [ext_resource type="Texture2D" uid="uid://blgqjn7ixr2ua" path="res://images/control panel.png" id="2_pi1im"]
 [ext_resource type="Script" path="res://collision_shape_2d.gd" id="3_accbk"]
 [ext_resource type="Script" path="res://panel.gd" id="3_iu6we"]
 [ext_resource type="AudioStream" uid="uid://dng7h7yjwkbd0" path="res://audio/click_001.ogg" id="5_jtqvl"]
-[ext_resource type="AudioStream" uid="uid://bso7m5bainebu" path="res://audio/error_007.ogg" id="6_oqwaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sx7og"]
 
@@ -32,8 +31,5 @@ script = ExtResource("3_accbk")
 
 [node name="ClickEffect" type="AudioStreamPlayer2D" parent="Panel"]
 stream = ExtResource("5_jtqvl")
-
-[node name="ErrorEffect" type="AudioStreamPlayer2D" parent="Panel"]
-stream = ExtResource("6_oqwaf")
 
 [connection signal="input_event" from="Panel/Area2D" to="Panel" method="_on_area_2d_input_event"]

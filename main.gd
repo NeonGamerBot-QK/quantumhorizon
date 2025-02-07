@@ -10,22 +10,25 @@ func _ready():
 
 @export var speed = 150 # Speed in pixels per second
 @export var stop_moving = false
+@export var i = 0;
 func _process(delta):
 	#print(sprite, $Node2D, $AnimatedSprite2D)
 	var direction = Vector2.ZERO # No movement by default
+	i += 1
 	#if Input.is_action_pressed("move_right"):
 		#direction.x += 1
 	#if Input.is_action_pressed("move_left"):
 		#direction.x -= 1
 	#if Input.is_action_pressed("move_down"):
 		#direction.y += 1
-	if stop_moving == false:
-		direction.x += .1
+	if stop_moving == false and i > 50:
+		direction.x += .1  + ((i % 100) * 0.01)
 		var rand = randf_range(0,10)
-		if rand > 5:
-			direction.y -= 00.1
-		else:
-			direction.y += 00.1
+		if i > 300:
+			if rand > 5:
+				direction.y -= (00.1 + ((i % 100) * 0.01)) 
+			else:
+				direction.y += (00.1 + ((i % 100) * 0.01)) 
 		if sprite.position.x > 1300:
 			print(sprite.position)
 			stop_moving = true
