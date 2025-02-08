@@ -18,13 +18,17 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		for i in range(5):
 			print(i)
 			$ErrorEffect.play()
-			if i >= 9:
-#				# play die sound
+			await get_tree().create_timer(1.0).timeout 
+			if i >= 4:
+#				# play question sound
+				$QuestionEffect.play()
+				$Dim.rect_size = get_viewport_rect().size
 				# dim stuff ig
+				$Dim.modulate.a = 0.5
 				# oh yea split into the colors..
-				
+				$Dim.raise()
 				pass
-			await get_tree().create_timer(1.5).timeout 
+			
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		print('eastereggmoment')
 		$ErrorEffect.play()

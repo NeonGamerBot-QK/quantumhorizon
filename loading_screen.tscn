@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7kjunwbxver7"]
+[gd_scene load_steps=8 format=3 uid="uid://c7kjunwbxver7"]
 
 [ext_resource type="Texture2D" uid="uid://prw87j1fy8x0" path="res://images/emoji_image.png" id="1_nl232"]
 [ext_resource type="Texture2D" uid="uid://8etcvnhl7qd4" path="res://images/kenny/arrow_basic_e.png" id="2_dqbcs"]
 [ext_resource type="Script" path="res://start_the_game.gd" id="3_36i4m"]
 [ext_resource type="Texture2D" uid="uid://c1hmfbj5eiipt" path="res://images/kenny/icon_outline_cross.png" id="4_ydtp6"]
 [ext_resource type="Script" path="res://leave.gd" id="5_x5l07"]
+[ext_resource type="AudioStream" uid="uid://bso7m5bainebu" path="res://audio/error_007.ogg" id="6_pmi6s"]
+[ext_resource type="AudioStream" uid="uid://4stkgvba24ro" path="res://audio/select_001.ogg" id="7_6krfg"]
 
 [node name="loading_screen" type="Node2D"]
 
@@ -26,9 +28,19 @@ scale = Vector2(3.43589, 4.84149)
 texture = ExtResource("2_dqbcs")
 script = ExtResource("3_36i4m")
 
+[node name="SelectEffect" type="AudioStreamPlayer2D" parent="Start the game"]
+position = Vector2(-71.7366, -91.1174)
+scale = Vector2(0.291045, 0.206548)
+stream = ExtResource("7_6krfg")
+
 [node name="Leave" type="Sprite2D" parent="."]
 position = Vector2(733.246, 441.144)
 scale = Vector2(6.93421, 6.11578)
 texture = ExtResource("4_ydtp6")
 offset = Vector2(10, 1)
 script = ExtResource("5_x5l07")
+
+[node name="ErrorEffect" type="AudioStreamPlayer2D" parent="Leave"]
+position = Vector2(-105.743, -72.1321)
+scale = Vector2(0.144213, 0.163511)
+stream = ExtResource("6_pmi6s")
