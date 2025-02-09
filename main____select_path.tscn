@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5v1xnilvbdc2"]
+
+[ext_resource type="Texture2D" uid="uid://d1tuvd7vlqqst" path="res://images/spacebridge big_0.png" id="1_6lqmh"]
+[ext_resource type="Script" path="res://main____select_path.gd" id="1_hooej"]
+[ext_resource type="AudioStream" uid="uid://chs0j0uc4cvbt" path="res://audio/question_001.ogg" id="3_yqmxw"]
+
+[sub_resource type="Environment" id="Environment_rbk42"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ip2xd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxxq4"]
+size = Vector2(212.825, 503.969)
+
+[node name="Main -- select path" type="Node2D"]
+script = ExtResource("1_hooej")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 325.25)
+scale = Vector2(4.6, 4.57801)
+texture = ExtResource("1_6lqmh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rbk42")
+camera_attributes = SubResource("CameraAttributesPractical_ip2xd")
+
+[node name="Red" type="Area2D" parent="."]
+position = Vector2(35, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red"]
+position = Vector2(286, 318)
+shape = SubResource("RectangleShape2D_gxxq4")
+one_way_collision_margin = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Red"]
+offset_left = 177.0
+offset_top = 65.0
+offset_right = 397.0
+offset_bottom = 570.0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.392157)
+metadata/_edit_use_anchors_ = true
+
+[node name="Green" type="Area2D" parent="."]
+position = Vector2(36, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Green"]
+offset_left = 399.0
+offset_top = 70.0
+offset_right = 619.0
+offset_bottom = 575.0
+mouse_filter = 2
+color = Color(0, 1, 0, 0.392157)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green"]
+position = Vector2(510.412, 319.016)
+shape = SubResource("RectangleShape2D_gxxq4")
+one_way_collision_margin = 0.0
+
+[node name="Blue" type="Area2D" parent="."]
+position = Vector2(11, -2)
+
+[node name="ColorRect" type="ColorRect" parent="Blue"]
+offset_left = 654.0
+offset_top = 67.0
+offset_right = 874.0
+offset_bottom = 572.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.392157)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue"]
+position = Vector2(762, 316)
+shape = SubResource("RectangleShape2D_gxxq4")
+one_way_collision_margin = 0.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yqmxw")
+
+[connection signal="input_event" from="Red" to="." method="_on_red_input_event"]
+[connection signal="input_event" from="Green" to="." method="_on_green_input_event"]
+[connection signal="input_event" from="Blue" to="." method="_on_blue_input_event"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -22,11 +22,13 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			if i >= 4:
 #				# play question sound
 				$QuestionEffect.play()
-				$Dim.rect_size = get_viewport_rect().size
+				#$Dim.rect_size = get_viewport_rect().size
 				# dim stuff ig
 				$Dim.modulate.a = 0.5
 				# oh yea split into the colors..
-				$Dim.raise()
+				#$Dim.raise()
+				# finally move to the next scene
+				get_tree().change_scene_to_file("res://main____select_path.tscn")
 				pass
 			
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
