@@ -39,5 +39,6 @@ func _on_blue_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func _on_audio_stream_player_2d_finished() -> void:
 	print("what if")
+	print(selected_timeline)
 	get_tree().change_scene_to_file('res://main____' + selected_timeline+ '_start.tscn')
 	pass # Replace with function body.
