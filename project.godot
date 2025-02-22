@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://images/kenny/": "red"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

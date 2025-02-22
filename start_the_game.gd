@@ -21,5 +21,10 @@ func _input(event):
 		if get_rect().has_point(to_local(event.position)):  # Check if click is inside sprite
 			$SelectEffect.play()
 			print("click ")
-			await get_tree().create_timer(.1).timeout 
-			get_tree().change_scene_to_file("res://main.tscn")
+			await get_tree().create_timer(.1).timeout
+			if(config.get_value("level", "timeline")):
+				var floor = config.get_value("level", "floor")
+				if(!floor): floor = "start"
+				get_tree().change_scene_to_file('res://main____' + config.get_value("level", "timeline")+ '_'+ (floor)  + '.tscn')		
+			else:
+				get_tree().change_scene_to_file("res://main.tscn")
