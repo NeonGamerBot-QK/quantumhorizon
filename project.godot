@@ -22,7 +22,8 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
-"res://images/kenny/": "red"
+"res://images/kenny/": "red",
+"res://testing/": "orange"
 }
 
 [rendering]

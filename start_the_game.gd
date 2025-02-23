@@ -25,6 +25,9 @@ func _input(event):
 			if(config.get_value("level", "timeline")):
 				var floor = config.get_value("level", "floor")
 				if(!floor): floor = "start"
-				get_tree().change_scene_to_file('res://main____' + config.get_value("level", "timeline")+ '_'+ (floor)  + '.tscn')		
+				# testing idiot moment
+				get_tree().change_scene_to_file('res://testing/player_tilemap.tscn')		
+				
+				#get_tree().change_scene_to_file('res://main____' + config.get_value("level", "timeline")+ '_'+ (floor)  + '.tscn')		
 			else:
 				get_tree().change_scene_to_file("res://main.tscn")

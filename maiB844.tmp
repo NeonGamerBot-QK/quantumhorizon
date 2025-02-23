@@ -649,7 +649,7 @@ texture = ExtResource("1_rptlg")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 floor_stop_on_slope = false
-floor_block_on_wall = false
+floor_constant_speed = true
 floor_snap_length = 5.2
 script = ExtResource("2_hl64f")
 
