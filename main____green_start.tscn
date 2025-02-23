@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bytb5v2v0re2d"]
+[gd_scene load_steps=25 format=4 uid="uid://bytb5v2v0re2d"]
 
 [ext_resource type="Texture2D" uid="uid://n6c1vn50obfo" path="res://images/starry_background.png" id="1_rptlg"]
 [ext_resource type="Script" path="res://levels/green/character_body_2d.gd" id="2_hl64f"]
@@ -143,14 +143,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7sbq"]
 size = Vector2(116, 154)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m8ddc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6sf64"]
 texture = ExtResource("4_i1r22")
-texture_region_size = Vector2i(1, 1)
+texture_region_size = Vector2i(8, 8)
+0:0/size_in_atlas = Vector2i(9, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35.6359, -32.0724, 34.745, -31.1815, 35.6359, 33.8541, -34.745, 32.9632)
+9:0/size_in_atlas = Vector2i(26, 8)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-105.126, -32.0724, 106.908, -33.8542, 99.7807, 30.2906, -103.344, 32.0724)
+35:0/size_in_atlas = Vector2i(9, 8)
+35:0/0 = 0
+35:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35.6359, -32.0724, 34.745, -31.1815, 35.6359, 33.8541, -34.745, 32.9632)
 
 [sub_resource type="TileSet" id="TileSet_r38uy"]
-tile_size = Vector2i(1, 1)
+tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/4 = SubResource("TileSetAtlasSource_m8ddc")
+sources/1 = SubResource("TileSetAtlasSource_6sf64")
 
 [node name="Main -- green" type="Node2D"]
 position = Vector2(-2, -4)
@@ -170,16 +179,17 @@ floor_snap_length = 5.2
 script = ExtResource("2_hl64f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(125, 366)
+position = Vector2(132, 482)
 scale = Vector2(2.53125, 2.5625)
 sprite_frames = SubResource("SpriteFrames_co4th")
 animation = &"run_left"
 autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(121, 372)
+position = Vector2(132, 490)
 shape = SubResource("RectangleShape2D_i7sbq")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(102, 0)
+tile_map_data = PackedByteArray("AAD4/0wAAQAAAAAAAAABAEwAAQAAAAAAAAAKAEwAAQAAAAAAAAATAEwAAQAAAAAAAAAcAEwAAQAAAAAAAAAlAEwAAQAAAAAAAAA3AEwAAQAJAAAAAABRAEwAAQAJAAAAAABrAEwAAQAJAAAAAAB9AEwAAQAAAAAAAAAVACAAAQAAAAAAAAAkAB0AAQAAAAAAAAAzABoAAQAAAAAAAABFAB4AAQAAAAAAAABhABkAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_r38uy")
