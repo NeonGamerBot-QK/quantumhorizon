@@ -7,11 +7,16 @@ extends CharacterBody2D # Use CharacterBody2D in Godot 4
 @onready var camera = $Camera2D
 func _ready():
 	$AnimatedSprite2D.flip_h = true;
+	camera.make_current()  
 	pass
+
 func _process(delta):
-	print(position.y, camera.position.y)
-	if position.y +500 < camera.position.y:  # Move camera up only
-		camera.position.y = lerp(camera.position.y, position.y, delta)
+	pass
+	#print(position.y, camera.position.y)
+	#var tile_id = get_tile_id_at($AnimatedSprite2D.position)
+	#print("Tile ID:", tile_id)
+	#if position.y +500 < camera.position.y:  # Move camera up only
+		#camera.position.y = lerp(camera.position.y, position.y, delta)
 func is_on_floor_custom():
 	#print(velocity.y)
 	var tilemap = get_node("../TileMapLayer")
@@ -22,7 +27,9 @@ func _physics_process(delta):
 	if not is_on_floor_custom():
 		velocity.y += gravity * delta # Apply gravity
 	velocity.x = 0  # Reset X velocity each frame
-
+	#var screen_center = get_viewport_rect().size / 16
+	#var offset_position = position - screen_center * 0.5  # Adjust centering effect
+	#camera.position = camera.position.lerp(offset_position,  delta)  # Smooth movement
 	var screen_size = get_viewport_rect().size  # Get screen size dynamically
 	var min_x = 0
 	var max_x = screen_size.x - 150  # Adjust based on sprite width
@@ -52,3 +59,22 @@ func _physics_process(delta):
 
 	# move_and_slide() # No need to redefine velocity in Godot 4
 	move_and_slide()
+
+
+func _on_collision_shape_2d_child_entered_tree(node: Node) -> void:
+	print(node.name, "Its IN!!")
+	pass # Replace with function body.
+
+
+func _on_collision_shape_2d_tree_entered() -> void:
+	print("um")
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body.name, "body area2")
+	if body.name == "CharacterBody2D":
+		print("to the next")
+		pass
+#		print("to the next ")
+	pass # Replace with function body.
