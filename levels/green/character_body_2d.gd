@@ -75,6 +75,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.name, "body area2")
 	if body.name == "CharacterBody2D":
 		print("to the next")
+		get_tree().change_scene_to_file('res://levels/green/main____green_level0.tscn')		
 		pass
 #		print("to the next ")
 	pass # Replace with function body.

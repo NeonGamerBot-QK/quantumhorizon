@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d14fajr5u6ph1"]
+[gd_scene load_steps=5 format=4 uid="uid://d14fajr5u6ph1"]
 
-[ext_resource type="Texture2D" uid="uid://by7ouiggambmf" path="res://images/kenny/platformerPack_industrial_tilesheet.png" id="1_pv50l"]
-[ext_resource type="Script" path="res://levels/green/main____green_level_0.gd" id="1_tlwf3"]
+[ext_resource type="Script" path="res://levels/green/main____green_level_0.gd" id="1_f7b30"]
+[ext_resource type="Texture2D" uid="uid://by7ouiggambmf" path="res://images/kenny/platformerPack_industrial_tilesheet.png" id="2_bgrqg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cf2g4"]
 resource_name = "arrow"
-texture = ExtResource("1_pv50l")
+texture = ExtResource("2_bgrqg")
 texture_region_size = Vector2i(8, 8)
 0:0/size_in_atlas = Vector2i(9, 8)
 0:0/0 = 0
@@ -29,8 +29,9 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cf2g4")
 
 [node name="Main -- Green level0" type="Node2D"]
-script = ExtResource("1_tlwf3")
+script = ExtResource("1_f7b30")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(102, 0)
+tile_map_data = PackedByteArray("AAD3/00AAQAAAAAAAAAAAE0AAQAAAAAAAAAPAE0AAQAJAAAAAAAnAE0AAQAJAAAAAAA/AE0AAQAJAAAAAABZAE0AAQAJAAAAAAByAE0AAQAJAAAAAAB2AE0AAQAJAAAAAAA=")
 tile_set = SubResource("TileSet_075kt")
