@@ -48,6 +48,7 @@ func _physics_process(delta):
 	else:
 		if $AnimatedSprite2D.animation == "run_right" or $AnimatedSprite2D.animation == "run_left":
 			$AnimatedSprite2D.stop()
+			print("stop")
 		index_until_idle += 1;
 		if index_until_idle > 10 and is_on_floor_custom():
 			$AnimatedSprite2D.play("idle_"+$AnimatedSprite2D.animation.split('_')[1])
